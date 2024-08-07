@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About KL University</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('bg.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 100%;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 ratio */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .btn-custom {
+            margin: 10px;
+        }
+        h1, p {
+            margin-bottom: 20px;
+        }
+        .main-heading {
+            font-size: 2.5rem; /* Adjust the font size as needed */
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<br><br>
+<br>
+
+    <div class="container">
+        <h1 class="main-heading">K L University Admission Portal</h1>
+        <h1>About KL University</h1>
+        <p>
+            The Koneru Lakshmaiah Charities was established as a trust in 1980 with its official address at Museum road, Vijayawada. The KL College of Engineering began in 1980-81 and later became the Koneru Lakshmaiah Education Foundation in 1996. The college attained autonomous status in 2006 and was recognized as a Deemed to be University in 2009, named KL University.
+            Situated on a spacious 50-acre campus on the banks of the Buckingham Canal, near Vijayawada city, the campus is a haven of natural beauty and serenity, aptly named "Green Fields". The campus covers a built-up area of around 1,500,000 sq. ft.
+            K.L. University offers graduate and post-graduate programs in engineering and is backed by excellent R&D. It is accredited by the National Board of Accreditation (NBA) of AICTE, with six branches accredited for 5 years.
+        </p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/_cfdmbrNYHA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+				<form action="LoginServlet">
+                    <button type="submit" class="btn btn-success btn-custom btn-block">Student Login</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form action="SignupServlet">
+                    <button type="submit" class="btn btn-success btn-custom btn-block">Student Signup</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                    <a href="contact_us.html" class="btn btn-primary btn-custom btn-block">Contact Us</a>
+                
+            </div>
+            <div class="col-md-4">
+                    <a href="https://www.kluniversity.in/" class="btn btn-primary btn-custom btn-block">Explore</a>
+                
+            </div>
+            
+            <div class="col-md-4">
+                <form action="AdminServlet">
+                    <button type="submit" class="btn btn-danger btn-custom btn-block">Admin Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

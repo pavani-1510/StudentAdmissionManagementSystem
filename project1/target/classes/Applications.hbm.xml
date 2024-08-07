@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.model.Application" table="application">
+        <id name="username" column="username">
+            <generator class="assigned"/>
+        </id>
+        <property name="fullName" column="full_name"/>
+        <property name="mobileNumber" column="mobile_number"/>
+        <property name="emailId" column="email_id"/>
+        <property name="gender" column="gender"/>
+        <property name="twelfthMarkSheetLink" column="twelfth_mark_sheet_link"/>
+        <property name="branch" column="branch"/>
+    </class>
+</hibernate-mapping>

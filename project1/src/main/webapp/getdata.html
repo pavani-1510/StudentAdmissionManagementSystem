@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+        }
+        #applicationDetails {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Track Your Application Status</h2>
+        <form id="statusForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Track Status</button>
+        </form>
+
+        <div id="applicationDetails">
+            <h3>Application Details:</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Full Name</th>
+                        <th>Mobile Number</th>
+                        <th>Email ID</th>
+                        <th>Gender</th>
+                        <th>12th Mark Sheet Link</th>
+                        <th>Branch</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="applicationBody">
+                    <!-- Application details will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+
+        <p id="statusMessage" class="text-danger"></p>
+    </div>
+
+    <script>
+        document.getElementById('statusForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById('username').value.trim();
+
+            if (username === "") {
+                document.getElementById('statusMessage').innerText = 'Username is required.';
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'GetApplicationByUsername?username=' + encodeURIComponent(username), true);
+
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var response = JSON.parse(xhr.responseText);
+                    var table = document.getElementById('applicationDetails');
+                    var tbody = document.getElementById('applicationBody');
+                    tbody.innerHTML = '';
+
+                    if (!response.error) {
+                        var row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${response.username}</td>
+                            <td>${response.fullName}</td>
+                            <td>${response.mobileNumber}</td>
+                            <td>${response.emailId}</td>
+                            <td>${response.gender}</td>
+                            <td><a href="${response.twelfthMarkSheetLink}" target="_blank">View</a></td>
+                            <td>${response.branch}</td>
+                            <td>${response.status}</td>
+                        `;
+                        tbody.appendChild(row);
+                        table.style.display = 'table';
+                        document.getElementById('statusMessage').innerText = '';
+                    } else {
+                        document.getElementById('statusMessage').innerText = response.error;
+                        table.style.display = 'none';
+                    }
+                } else {
+                    document.getElementById('statusMessage').innerText = 'Error fetching application details';
+                }
+            };
+
+            xhr.onerror = function() {
+                document.getElementById('statusMessage').innerText = 'Request failed';
+            };
+
+            xhr.send();
+        });
+    </script>
+</body>
+</html>
