@@ -80,9 +80,4 @@ The Student Admission Management System is an efficient tool for managing univer
 - **Email Notifications:** Send email alerts to applicants regarding their application status.
 - **Advanced Analytics:** Incorporate analytics to track application trends and statistics.
 - **User Role Management:** Enhance the system to support multiple admin roles with varying permissions.
-  
-For more details, refer to the [Student Admission Management System repository](https://github.com/pavani-1510/StudentAdmissionManagementSystem).
 
----
-
-This report covers the key aspects of the Student Admission Management System project. If you need further details or assistance, feel free to ask!
