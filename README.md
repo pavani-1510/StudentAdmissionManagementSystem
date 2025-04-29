@@ -1,4 +1,4 @@
-### Project Report: Student Admission Management System
+# Student Admission Management System
 
 #### 1. Introduction
 The Student Admission Management System is a web application designed to streamline the university admission process. This system facilitates online application submission, document upload, application status tracking, and data management. The project aims to simplify the admission process for both applicants and administrators, ensuring a smooth and efficient workflow.
@@ -75,9 +75,13 @@ Servlets manage the requests and responses between the client and server. Key se
 
 #### 7. Conclusion
 The Student Admission Management System is an efficient tool for managing university admissions. It simplifies the application process for students and provides administrators with robust tools for managing applications and generating reports. The use of modern web technologies ensures a smooth user experience and easy maintenance.
+--------------------
+## Author
+- [R Pavani](https://www.linkedin.com/in/r-pavani/)
+- [GitHub](https://github.com/pavani-1510/)
 
-#### 8. Future Enhancements
-- **Email Notifications:** Send email alerts to applicants regarding their application status.
-- **Advanced Analytics:** Incorporate analytics to track application trends and statistics.
-- **User Role Management:** Enhance the system to support multiple admin roles with varying permissions.
+---
 
+© 2025 R Pavani. All rights reserved.
+
+---
